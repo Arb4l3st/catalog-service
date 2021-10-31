@@ -1,4 +1,4 @@
-package ru.arba.catalogservice.config;
+package ru.arba.catalog.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

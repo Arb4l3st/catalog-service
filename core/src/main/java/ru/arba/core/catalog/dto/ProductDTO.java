@@ -1,6 +1,6 @@
-package ru.arba.catalogservice.dto;
+package ru.arba.core.catalog.dto;
 
-import ru.arba.catalogservice.enums.CategoryEnum;
+import ru.arba.catalog.enums.CategoryEnum;
 
 public class ProductDTO {
     private String key;
