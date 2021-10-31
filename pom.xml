@@ -2,6 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<modules>
+		<module>catalog-service</module>
+		<module>core</module>
+		<module>database-service</module>
+		<module>feign-client</module>
+	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -9,11 +15,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ru.arba</groupId>
-	<artifactId>catalog-service</artifactId>
+	<artifactId>online-shop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
-	<name>catalog-service</name>
-	<description>Ctalog Service for online store</description>
+	<packaging>pom</packaging>
+	<name>online-shop</name>
+	<description>Catalog Service for online store</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -50,14 +56,5 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>

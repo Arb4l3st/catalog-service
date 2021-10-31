@@ -1,10 +1,10 @@
-package ru.arba.catalogservice.controllers;
+package ru.arba.catalog.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.arba.catalogservice.dto.ProductDTO;
-import ru.arba.catalogservice.services.ProductDTOMock;
+import ru.arba.core.catalog.dto.ProductDTO;
+import ru.arba.catalog.services.ProductDTOMock;
 
 import java.util.Map;
 
@@ -20,7 +20,7 @@ public class ProductController {
 
     //занесение новой карточки
     @PutMapping(path="/create")
-    public HttpStatus createCard(@RequestBody ProductDTOMock productDTOMock){
+    public HttpStatus createCard(@RequestBody ProductDTOMock productDTOMock){ // Тут следует возвращать так-же ResponseEntity (ResponseEntity.ok().build() )
         ProductDTO productDTO = productDTOMock.getProductDTO();
         catalog.put(productDTO.getKey(), productDTOMock);
         return HttpStatus.OK;
@@ -28,14 +28,14 @@ public class ProductController {
 
     //получение карточки
     //мэмэмэаэмээм  - а если такого в мапе нет? мэаэмэмэаэ
-    @GetMapping(value = {"key"})
+    @GetMapping(value = {"key"}) // фигурные скобки для переменных пути указывают внутри кавычек: "{key}"
     public ResponseEntity<ProductDTOMock> getCard(@PathVariable("key") String key){
         return ResponseEntity.ok(catalog.get(key));
     }
 
     //изменение карточки
     @PostMapping(path="/update")
-    public HttpStatus updateCard(@RequestBody ProductDTOMock productDTOMock){
+    public HttpStatus updateCard(@RequestBody ProductDTOMock productDTOMock){ // Тут следует возвращать так-же ResponseEntity
         ProductDTO productDTO = productDTOMock.getProductDTO();
         if (catalog.containsKey(productDTO.getKey())){
             catalog.put(productDTO.getKey(), productDTOMock);

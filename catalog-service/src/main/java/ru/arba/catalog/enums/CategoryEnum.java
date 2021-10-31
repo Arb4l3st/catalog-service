@@ -1,4 +1,4 @@
-package ru.arba.catalogservice.enums;
+package ru.arba.catalog.enums;
 
 public enum CategoryEnum {
     CATEGORY_1,

@@ -1,7 +1,7 @@
-package ru.arba.catalogservice.services;
+package ru.arba.catalog.services;
 
 import org.springframework.stereotype.Service;
-import ru.arba.catalogservice.dto.ProductDTO;
+import ru.arba.core.catalog.dto.ProductDTO;
 
 @Service
 public class ProductDTOMock {
